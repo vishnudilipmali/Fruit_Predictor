@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Classifier</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+           background: url("{{ url_for('static', filename='download.jpg') }}") no-repeat center center/cover;
+            display: flex;
+            justify-content: center;   /* FIXED */
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 { color: #333; margin-bottom: 1.5rem; }
+
+        .upload-area {
+            border: 2px dashed #cbd5e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .upload-area:hover { border-color: #4CAF50; }
+
+        input[type="file"] { width: 100%; margin-top: 10px; }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        button:hover { background-color: #45a049; }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            border-left: 5px solid #4CAF50;
+            text-align: left;
+        }
+
+        .fruit-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2e7d32;
+            text-transform: capitalize;
+        }
+
+        .meta { font-size: 0.9rem; color: #666; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>🍎 Fruit Predictor</h1>
+
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="upload-area">
+                <p>Select a fruit image</p>
+                <input type="file" name="file" accept="image/*" required>
+            </div>
+            <button type="submit">Predict Fruit</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <div class="meta">I am {{ confidence }} sure this is:</div>
+            <div class="fruit-name">{{ prediction }}</div>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

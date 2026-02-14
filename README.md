@@ -82,4 +82,6 @@ Deploy on cloud (Heroku / Railway / Vercel)
 
 Feel free to open an issue or submit a pull request!
 <img width="1906" height="1079" alt="image" src="https://github.com/user-attachments/assets/26ea59a2-330c-4754-a4c1-a4444ba2dde9" />
+output:
+<img width="1911" height="1079" alt="image" src="https://github.com/user-attachments/assets/72da6a33-5ce5-48d8-a119-de3d033d896f" />
 

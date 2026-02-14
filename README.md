@@ -81,3 +81,5 @@ Add real-time webcam support
 Deploy on cloud (Heroku / Railway / Vercel)
 
 Feel free to open an issue or submit a pull request!
+<img width="1906" height="1079" alt="image" src="https://github.com/user-attachments/assets/26ea59a2-330c-4754-a4c1-a4444ba2dde9" />
+
